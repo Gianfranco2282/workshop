@@ -1,102 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js/index.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body id="gridMain">
-    <div class="menu"></div>
-    <div class="container">
-        <h1>Septiembre 2022</h1>
-        <ol>
-            <li class="diasSemana">Lunes</li>
-            <li class="diasSemana">Martes</li>
-            <li class="diasSemana">Miercoles</li>
-            <li class="diasSemana">Jueves</li>
-            <li class="diasSemana">Viernes</li>
-            <li class="diasSemana">Sabado</li>
-            <li class="diasSemana">Domingo</li>
-
-            <li class= "efectoDia" id="primerDia">1</li>
-            <li class="efectoDia">2</li>
-            <li class="efectoDia">3</li>
-            <li class="efectoDia">4</li>
-            <li class="efectoDia">5</li>
-            <li class="efectoDia">6</li>
-            <li class="efectoDia">7</li>
-            <li class="efectoDia">8</li>
-            <li class="efectoDia">9</li>
-            <li class="efectoDia">10</li>
-            <li class="efectoDia">11</li>
-            <li class="efectoDia">12</li>
-            <li class="efectoDia">13</li>
-            <li class="efectoDia">14</li>
-            <li class="efectoDia">15</li>
-            <li class="efectoDia">16</li>
-            <li class="efectoDia">17</li>
-            <li class="efectoDia">18</li>
-            <li class="efectoDia">19</li>
-            <li class="efectoDia">20</li>
-            <li class="efectoDia">21</li>
-            <li class="efectoDia">22</li>
-            <li class="efectoDia">23</li>
-            <li class="efectoDia">24</li>
-            <li class="efectoDia">25</li>
-            <li class="efectoDia">26</li>
-            <li class="efectoDia">27</li>
-            <li class="efectoDia">28</li>
-            <li class="efectoDia">29</li>
-            <li class="efectoDia">30</li>
-            <li class="efectoDia">31</li>
-        </ol>
-        <!-- VENTANA MODAL CON FORMULARIO-->
-        <input type="checkbox" id="btn-modal">
-        <label for="btn-modal" class="lbl-modal">Cargar Turno</label>
-        <div class="modal">
-            <div class="contenedor">
-                <header>Guarde su Turno</header>
-                <label for="btn-modal">X</label>
-                <form class="contenido" id="form" >
-                    <input class="formulario" id="Nombre" type="text" name="nombres" placeholder="Nombre">
-                    <input class="formulario" id="Apellido" type="text" name="apellido"  placeholder="Apellido">
-                    <input class="formulario" id="Edad" type="text" name="correo" placeholder="Edad">
-                    <input class="formulario" id="Fecha" type="date" name="fecha">
-                    <input class="formulario" id="Hora" type="time" step="600" min="07:30" max="21:00" name="hora" placeholder="Hora">
-                    <input for="btn-modalExito" class="formulario" id="btnCargarTurno" type="submit" value="Reservar Turno">
-                </form>  
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>HomeCell</title>
+    </head>
+<body class="contenido" >
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">WordCell</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  <a class="nav-link" href="#">Productos</a>
+                  <a class="nav-link" href="#">Contacto</a>
+                  <a class="nav-link disabled">Informacion</a>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="formulario" type="text">
+                    <button class="btn btn-info" id="boton2">Buscar</button>
+                  </form>
+                  
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="total-carrito">0</span>🛒
+                  </button>
+                  <div class="dropdown-menu carrito" aria-labelledby="dropdownMenu2">
+                    <div class="compra">
+                      <!--Codigo JS-->
+                   </div>
+                    <p class="totalCompra">TOTAL COMPRA:</p>
+                    <p><span>$</span><span class="total" id="total">0</span></p>
+                    <button class="eliminar" id="vaciarCarrito"> Vaciar Carrito 🛒 </button>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="tablaTurnos">
-        <table id="turnosTable" class="cabezeraTabla">
-            <thead>
-                <tr>
-                    <th>Editar</th>
-                    <th>Confirm/Asist</th>
-                    <th>Hora</th>
-                    <th class="thFecha">Fecha</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Edad</th>
-                    <th>Modalidad</th>
-                    <th>Medio de Pago</th>
-                    <th>Confirm Pago</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>   
-        </table>
-    </div>
-    <footer class="padreFooter">
-        <div class="footer"></div> 
-    </footer>
-</body>
+            
+          </nav>
+    </header>
+    <main >
 
+        <section class="buscador">
+        <p class="disponible">Celulares Disponibles</p>
+        <ul id="resultado" class="resultado">
+         <!--Codigo JS-->
+         
+        </ul>
+        <p class="Tienda">TIENDA</p>
+      </section>
+        <div id="cardCelular" class="cardCelular">
+              <!--Codigo JS-->
+        </div>
+       
+    </main>
+   
+      <footer class="footer">  
+        <div class="grupo1">
+          <div class="caja">
+            <figure>
+              <a href="#">
+                <img class="logo" src="img/homecelllogo.jpg">
+              </a>
+            </figure>
+          </div>
+          <div class="caja">
+            <h2 class="sobre">Sobre Nosotros</h2>
+            <p class="info">En HomeCell vas a encontrar una selección de los últimos celulares a la venta junto con una amplia variedad de smartphones de primera categoría. </p>
+            <p class="info"> Encontrá todas las especificaciones para decidir cuál de los modelos de celulares es tu mejor opción.</p>
+          </div>
+          <div class="caja">
+            <h2 class="siguenos">Siguenos en Redes Sociales</h2>
+            <div class="redes">
+                  <a href="https://www.instagram.com/" target="_blanc."><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/" target="_blanc."><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://twitter.com/" target="_blanc."><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.twitch.tv/"  target="_blanc."><i class="fa-brands fa-twitch"></i></a>
+                  <a href="https://web.telegram.org/k/" target="_blanc."><i class="fa-brands fa-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="grupo-2">
+          <small>&copy; 2022 <b>HomeCell</b>- Todos los derechos Reservados</small>
+  
+        </div>
+        
+      </footer>
+      <script src="./cards.js"></script>
+      <script src="./app.js"></script>
+</body>
+  
 </html>

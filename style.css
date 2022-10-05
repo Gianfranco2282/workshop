@@ -1,261 +1,177 @@
-body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #F9F2ED;
-    color: #fff;
-    display: flex;
-}
-
-#gridMain {
-    display: grid;
-    /*Estructura grids areas*/
-    grid-template-areas: 
-    "menu calendar"
-    "menu datos"
-    "menu footer";
-
-    grid-template-columns: 10% 90%;
-    grid-template-rows: 100% 110% 10%;
-}
-
-/********************** MENU *****************/
-
-.menu {
-    width: 10%;
-    height: 100%;
-    box-shadow: 0px 0px 10px gray;
-    position: fixed;
-}
-
-/********************** CALENDARIO DE TURNOS *****************/
-
-.container {
-    grid-area: calendar;
-    height: 90%;
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3ab0ff;
-    padding: 0% 3% 3% 3%;
-    border-radius: 30px;
-    box-shadow: 0px 0px 10px gray;
-}
-
-h1 {
-    height: 10%;
-    margin: 0;
-    padding-top: 2%;
-    font-size: xxx-large;
-    text-shadow: 1px 1px 2px #F87474;
-}
-
-ol {
-    height: 60%;
-    width: 100%;
+*{
+    box-sizing: border-box;
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 0;
 }
-
-#primerDia {
-    grid-column-start: 5;
-}
-
-.diasSemana {
+.cardCelular{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFA33B;
-    text-shadow: 1px 1px 1px black;
-    font-size: x-large;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   padding: 10px;
 }
-
-.efectoDia {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #CC832F;
-    font-size: x-large;
-    background-color: #FFB562;
-    text-shadow: 1px 1px 2px black;
+.card{
+    border-color: black;
+    margin: 20px;
+}
+.contenido{
+    background-image: url(./img/imgfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+   
+}
+.carrito{
+    background-color: rgb(255, 255, 255);
+    border-color: black;
+}
+.totalCompra{
+    
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+.total{
+    font-size: 1.2rem;
     
 }
 
-.efectoDia:hover {
-    color: #3ab0ff;
+.listcompra{
+    background-color: #2e2c2c;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    
 }
-
-/* VENTANA MODAL */
-
-body, .modal{
-    width: 100%;
-    height: 100vh;
+.listcompra img{
+    margin-left: 12.5px;
+    border-radius: 10px;
+}
+.listcompra div{
+    margin-top: 10px;
+    
+}
+.resultado{
     display: flex;
-    justify-content: center;
+    
+    color: white;
+    text-align: justify;
+    border-radius: 10px;
+   
+    
 }
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgb(0,0,0,0.5);
-    transition: all 500ms ease;
-    opacity: 0;
-    visibility: hidden;
+.resultado div{
+    background-color: #2e2c2c;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
-
-#btn-modal:checked ~ .modal{
-    opacity: 1;
-    visibility: visible;
+.resultado div img{
+    margin-left: 17px;
+    width: auto;
 }
-
-.contenedor {
-    width: 400px;
-    height: 90vh;
-    margin: auto;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 50px;
-    background: #fff;
-    box-shadow: 1px 7px 25px rgba(0, 0, 0, 0,6);
-    transition: all 500ms ease;
-    position: relative;
-    transform: translateY(-30%);
+li{
+ 
+ border-radius: 5px;
+ margin-top: 5px;
 }
-
-#btn-modal:checked ~ .modal .contenedor{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0%);
+.eliminar{
+   margin-left: 12px;
+   border-radius: 20px;
+   background-color:#DC3545;
+   color: white;
 }
-
-.contenedor header{
-    background: #FFB562;
-    padding: 10px 10px 10px 30px;
-    color: #fff;
-    border-top-left-radius: 50px;
-    font-size: large;
+p{
+    color: white;
 }
-
-.contenedor label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
+p span{
+    margin-left: 15px;
 }
-
-.contenido {
-    display: flex;
-    flex-direction: column;
+.dropdown-menu.show{
+    background-color: #2e2c2c;
+}
+.Tienda {
     text-align: center;
-    justify-content: center;
-    padding: 20px;
+    font-size: 1.3rem;
+    background-color:  #2e2c2c;
+    color: white;
+    margin: 0%;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 10px;
 }
-
-.formulario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid black;
-    color: black;
-}
-
-.formularioInvalido {
-    padding: 15px;
-    border: 1px solid red;
-    color: red;
-}
-
-.validacionTexto {
-    color: red;
-}
-
-#btn-modal {
-    display: none;
-}
-.lbl-modal {
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
-    padding: 5px;
-    background-color: #F87474;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-#btnCargarTurno {
-    padding: 15px;
-    background-color: #F87474;
-    border: 1px solid black;
-    color: #fff;
-    font-size: large;
-    cursor: pointer;
-}
-
-#textoValidacionMes{
-    color: red;
-}
-
-#textoValidacionDia{
-    color: red;
-}
-
-/********************** TABLA TURNOS *****************/
-
-.tablaTurnos {
-    grid-area: datos;
-    display: flex;
-    justify-content: center;
-    color: black;
-    margin: 50px;
-}
-
-.cabezeraTabla {
-    box-shadow: 0px 0px 10px gray;
-    border-collapse: collapse;
-}
-
-th {
-    background-color: #3ab0ff;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 15px;
+.disponible{
     text-align: center;
+    font-size: 1.3rem;
+    background-color:  #2e2c2c;
+    color: white;
+    margin: 0%;
+    border-color: #ffffff;
+    border-style: solid;
+    border-radius: 10px;
 }
-
-.thFecha {
-    padding: 0px 40px 0px 40px;
-}
-
-
-/********************** FOOTER *****************/
-.padreFooter {
-    grid-area: footer;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.footer {
-    display: flex;
+.buscador{
+    display: inline-block;
     width: 100%;
-    color: #3ab0ff;
-    box-shadow: 10px 0px 10px gray;
-    justify-content: center;
-    text-align: center;
+    height: auto;
+    align-items: center;
 }
+.boton-eliminar{
+    background-color: #DC3545;
+    border-radius: 10px;
+    color: white;
+}
+/*Diseño del footer*/
+.footer { 
+    width: 100%; 
+    background-color: #2e2c2c; 
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif; margin-top: 80px; 
+}
+
+.footer .grupo1 { 
+    width: 100%;
+    max-width: 1200px; 
+    margin: auto; display: 
+    -ms-grid; display: grid; 
+    -ms-grid-columns: 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 50px; 
+    padding: 10px 0px; 
+}
+
+.footer .grupo1 .figure { 
+    width: 100%; 
+    height: 100%; 
+    display: -webkit-box;
+    display: -ms-flexbox; 
+    display: flex; 
+    -webkit-box-pack: center; 
+    -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center; 
+}
+
+.footer .grupo1 .figure .logo {
+  width: 250px;
+  
+}
+img.logo{
+    border-radius: 10px;
+}
+
+
+.footer .grupo1 .caja .sobre { margin-bottom: 25px; font-size: 20px; text-align: center; }
+
+.footer .grupo1 .caja .info { margin-bottom: 10px; text-align: justify; }
+
+.footer .grupo1 .caja .siguenos { margin-bottom: 25px; font-size: 20px; text-align: center; }
+
+.footer .grupo1 .caja .redes a { font-size: 25px; display: inline-block; text-decoration: none; width: 45px; height: 45px; line-height: 45px; color: white; margin-left: 20px; background-color: #0f0f0f; text-align: center; -webkit-transition: all 300ms ease; transition: all 300ms ease; border-radius: 10px; }
+
+.footer .grupo1 .caja .redes a:hover { color: lime; }
+
+.footer .grupo-2 { background-color: #0f0f0f; text-align: center; color: white; }
+
+.footer .grupo-2 small { font-size: 15px; }
